@@ -1,28 +1,38 @@
 
 =========================
 Picas izmers:
-50cm
+30cm
 Picas piedevas:
 siers
 skinkis
-desa
-desa
+=========================
+Picas izmers:
+50cm
+Picas piedevas:
+siers
+Picas merce:
+=========================
+Picas izmers:
+50cm
+Picas piedevas:
+siers
 =========================
 Picas izmers:
 30cm
 Picas piedevas:
-=========================
-Picas izmers:
-Picas piedevas:
-=========================
-Picas izmers:
-30cm
-Picas piedevas:
+siers
 =========================
 Picas izmers:
 30cm
 Picas piedevas:
+siers
+skinkis
+Picas merce:
+kecups
+majoneze
 =========================
 Picas izmers:
 30cm
 Picas piedevas:
+siers
+Picas merce:
