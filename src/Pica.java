@@ -46,34 +46,89 @@ public class Pica {
 		public static void PCDA() {
 			Scanner scan = new Scanner(System.in);
 			String izvele;
-			int a=30,b=50;
 			try {
 			
 				System.out.println("=========================");
 				System.out.println("Picas izmērs");
+				ierakstit("\n=========================");
+				ierakstit("\nPicas izmers:");
 				System.out.println("1 - 30cm|2 - 50cm| Atpakal");;
 				izvele = scan.next();		
 				izvele = izvele.toLowerCase();
 		
 					switch(izvele){
-					case"1":
-						ierakstit("\n"+30+"cm");
+					case"1":ierakstit("\n30cm");
 					break;
 					//==================	
-					case"2":
-						ierakstit("\n"+50+"cm");
+					case"2":ierakstit("\n50cm");
 					break;
 					//==================		
 					case"atpakal":
-
 					break;
 					//==================	
-					default:
-						System.out.println("Darbiba nepastav!");
-					}
-				
+					default:System.out.println("Darbiba nepastav!");}	
 			}catch(Exception e){
 	}
+			
+			try {
+				
+				boolean SE = false,KE = false,DE = false,EE = false;
+				System.out.println("Picas piedevas");
+		
+				ierakstit("\nPicas piedevas:");
+				System.out.println("1 - siers|2 - šķinķis|3 - desa|4 - sēnes| Turpinat");
+				do {
+				izvele = scan.next();		
+				izvele = izvele.toLowerCase();
+				
+					switch(izvele){
+					
+					case"1":
+						if(!SE) {
+						ierakstit("\nsiers");
+						SE = true;
+					
+					}else {
+						System.out.println("Siers jau ir pielikts!");
+					}
+					break;
+					//==================	
+					case"2":
+						if(!KE) {
+							ierakstit("\nskinkis");
+							KE = true;	
+					
+					}else {
+						System.out.println("desa jau ir pielikts!");
+					}
+					break;
+					//==================		
+					case"3":
+						if(!DE) {
+						ierakstit("\ndesa");
+						DE = true;
+					
+					}else {
+						System.out.println("desa jau ir pielikts!");
+					}
+					break;
+					//==================	
+					case"4":
+						if(!EE) {
+						ierakstit("\nsenes");
+						EE = true;
+					break;
+					}else {
+						System.out.println("senes jau ir pielikts!");
+					}
+					break;
+					//==================	
+						
+					default:System.out.println("");}	
+				}while(izvele!="turpinat");
+			}catch(Exception e){
+	}
+			System.out.println("Picas mērce");
 			
 				
 		
@@ -85,7 +140,7 @@ public class Pica {
 			String v,u,a = null;
 			int t=0,count = 0;
 			char n=0;
-			String PersonasDati = null;
+			
 			
 			System.out.println("Adrese(Ielas nosaukums un numurs): ");
 			a = scan.nextLine();

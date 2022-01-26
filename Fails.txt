@@ -1,16 +1,10 @@
-Adrese: Rigas iela 15
-Vards uzvards: GintsKanders
-Telefons: 67348943--------------------------------------Adrese: Rigas iela 15
-Vards uzvards: Gints Kanders
-Telefons: 78548945--------------------------------------
-Adrese: Rigas iela 15
-Vards uzvards: Gints Kanders
-Telefons: 78549832
----------------------
-Adrese: Rigas iela 15
-Vards uzvards: Gints Kanders
-Telefons: 78754532 30cm
-30cm
-30cm
-30cm
-50
+
+=========================
+Picas izmers:
+50cm
+Picas piedevas:
+siers
+desa
+=========================
+Picas izmers:
+Picas piedevas:
