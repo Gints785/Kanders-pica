@@ -52,7 +52,7 @@ public class Pica {
 				System.out.println("Picas izmērs");
 				ierakstit("\n=========================");
 				ierakstit("\nPicas izmers:");
-				System.out.println("1 - 30cm|2 - 50cm| Atpakal");;
+				System.out.println("1 - 30cm|2 - 50cm");;
 				izvele = scan.next();		
 				izvele = izvele.toLowerCase();
 		
@@ -63,12 +63,11 @@ public class Pica {
 					case"2":ierakstit("\n50cm");
 					break;
 					//==================		
-					case"atpakal":
-					break;
-					//==================	
 					default:System.out.println("Darbiba nepastav!");}	
 			}catch(Exception e){
 	}
+			
+			
 			
 			try {
 				
@@ -76,7 +75,7 @@ public class Pica {
 				System.out.println("Picas piedevas");
 		
 				ierakstit("\nPicas piedevas:");
-				System.out.println("1 - siers|2 - šķinķis|3 - desa|4 - sēnes| Turpinat");
+				System.out.println("1 - siers|2 - šķinķis|3 - desa|4 - sēnes|5- Turpinat");
 				do {
 				izvele = scan.next();		
 				izvele = izvele.toLowerCase();
@@ -87,7 +86,6 @@ public class Pica {
 						if(!SE) {
 						ierakstit("\nsiers");
 						SE = true;
-					
 					}else {
 						System.out.println("Siers jau ir pielikts!");
 					}
@@ -97,7 +95,6 @@ public class Pica {
 						if(!KE) {
 							ierakstit("\nskinkis");
 							KE = true;	
-					
 					}else {
 						System.out.println("desa jau ir pielikts!");
 					}
@@ -107,7 +104,6 @@ public class Pica {
 						if(!DE) {
 						ierakstit("\ndesa");
 						DE = true;
-					
 					}else {
 						System.out.println("desa jau ir pielikts!");
 					}
@@ -117,18 +113,23 @@ public class Pica {
 						if(!EE) {
 						ierakstit("\nsenes");
 						EE = true;
-					break;
 					}else {
 						System.out.println("senes jau ir pielikts!");
 					}
 					break;
 					//==================	
+					case"5":
+					
+					break;
+					//==================	
 						
-					default:System.out.println("");}	
-				}while(izvele!="turpinat");
-			}catch(Exception e){
-	}
-			System.out.println("Picas mērce");
+					default:System.out.println("");}
+				
+				}while(izvele=="5");
+				System.out.println("Picas");
+		}catch(Exception e){
+		}
+		System.out.println("Picas mērce");
 			
 				
 		
