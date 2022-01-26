@@ -3,13 +3,13 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Pica {
-
+//===========================================================================	
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		String izvele;
 		
 		do{
-			System.out.println("1 - Ievadīt klienta datus|2 - Ievietot faila| Atcelt");;
+			System.out.println("1 - Ievadīt klienta datus|2 - Izvēleties Picu| Atcelt");;
 			izvele = scan.next();		
 			izvele = izvele.toLowerCase();
 	
@@ -19,7 +19,7 @@ public class Pica {
 				break;
 				//==================	
 				case"2":
-					
+					PCDA();
 				break;
 				//==================		
 				case"atcelt":
@@ -34,21 +34,53 @@ public class Pica {
 		}
 	
 	public static void ierakstit(String v){
-		try{
-			
+		try{	
 			FileWriter fw = new FileWriter("Fails.txt", true);
 			PrintWriter raksta = new PrintWriter(fw);
 			raksta.print(v);
 			raksta.close();
+}catch(Exception e){
+}
+}
+//===========================================================================	
+		public static void PCDA() {
+			Scanner scan = new Scanner(System.in);
+			String izvele;
+			int a=30,b=50;
+			try {
 			
-			
-		}catch(Exception e){
-			
-		}
-	}
-		public static void KLDA() {
-			
+				System.out.println("=========================");
+				System.out.println("Picas izmērs");
+				System.out.println("1 - 30cm|2 - 50cm| Atpakal");;
+				izvele = scan.next();		
+				izvele = izvele.toLowerCase();
+		
+					switch(izvele){
+					case"1":
+						ierakstit("\n"+30+"cm");
+					break;
+					//==================	
+					case"2":
+						ierakstit("\n"+50+"cm");
+					break;
+					//==================		
+					case"atpakal":
 
+					break;
+					//==================	
+					default:
+						System.out.println("Darbiba nepastav!");
+					}
+				
+			}catch(Exception e){
+	}
+			
+				
+		
+
+}
+//===========================================================================		
+		public static void KLDA() {
 			Scanner scan = new Scanner(System.in);
 			String v,u,a = null;
 			int t=0,count = 0;
@@ -76,20 +108,15 @@ public class Pica {
 			i=t;
 			while (i != 0) {  
 			      i /= 10;
-			      ++count;
-			      
-			   
+			      ++count;   
 			}
 			 String t1=String.format("%d",t);  
 		      ierakstit("\nTelefons: "+t1);
 			}while(8!=count);
-			
 			System.out.println("\nIerakstits faila");
 			break;
-			
-				}
-			
-				
-			}
-		}
+}
+}
+}
+//===========================================================================	
 	}
