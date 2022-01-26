@@ -1,38 +1,160 @@
 
+---------------------
+Adrese: Rigas iela 15
+Vards uzvards: Gints Kanders
+Telefons: 12344567
 =========================
 Picas izmers:
-30cm
+50cm -  3.50 Euro
 Picas piedevas:
-siers
-skinkis
-=========================
-Picas izmers:
-50cm
-Picas piedevas:
-siers
+desa - 2.00 Euro
+senes - 1.00 Euro
 Picas merce:
+kecups - 1.00 Euro
+majoneze - 1.00 Euro
+---------------------
 =========================
 Picas izmers:
-50cm
+50cm -  3.50 Euro
 Picas piedevas:
-siers
-=========================
-Picas izmers:
-30cm
-Picas piedevas:
-siers
-=========================
-Picas izmers:
-30cm
-Picas piedevas:
-siers
-skinkis
+skinkis - 2.00 Euro
 Picas merce:
-kecups
-majoneze
+gruku merce - 1.20 Euro
+---------------------
 =========================
 Picas izmers:
-30cm
+50cm -  3.50 Euro
 Picas piedevas:
-siers
+skinkis - 2.00 Euro
 Picas merce:
+kecups - 1.00 Euro
+---------------------
+=========================
+Picas izmers:
+30cm - 2.00 Euro
+Picas piedevas:
+siers - 1.50 Euro
+Picas merce:
+gruku merce - 1.20 Euro
+---------------------
+=========================
+Picas izmers:
+50cm -  3.50 Euro
+Picas piedevas:
+siers - 1.50 Euro
+skinkis - 2.00 Euro
+desa - 2.00 Euro
+Picas merce:
+kecups - 1.00 Euro
+---------------------
+=========================
+Picas izmers:
+30cm - 2.00 Euro
+Picas piedevas:
+desa - 2.00 Euro
+Picas merce:
+---------------------
+=========================
+Picas izmers:
+30cm - 2.00 Euro
+Picas piedevas:
+skinkis - 2.00 Euro
+desa - 2.00 Euro
+Picas merce:
+---------------------
+=========================
+Picas izmers:
+30cm - 2.00 Euro
+Picas piedevas:
+siers - 1.50 Euro
+Picas merce:
+---------------------
+=========================
+Picas izmers:
+30cm - 2.00 Euro
+Picas piedevas:
+skinkis - 2.00 Euro
+desa - 2.00 Euro
+Picas merce:
+---------------------
+=========================
+Picas izmers:
+30cm - 2.00 Euro
+Picas piedevas:
+skinkis - 2.00 Euro
+senes - 1.00 Euro
+Picas merce:
+---------------------
+=========================
+Picas izmers:
+30cm - 2.00 Euro
+Picas piedevas:
+skinkis - 2.00 Euro
+senes - 1.00 Euro
+Picas merce:
+---------------------
+=========================
+Picas izmers:
+30cm - 2.00 Euro
+Picas piedevas:
+skinkis - 2.00 Euro
+desa - 2.00 Euro
+Picas merce:
+---------------------
+=========================
+Picas izmers:
+30cm - 2.00 Euro
+Picas piedevas:
+siers - 1.50 Euro
+skinkis - 2.00 Euro
+Picas merce:
+---------------------
+=========================
+Picas izmers:
+30cm - 2.00 Euro
+Picas piedevas:
+siers - 1.50 Euro
+skinkis - 2.00 Euro
+desa - 2.00 Euro
+senes - 1.00 Euro
+Picas merce:
+---------------------
+=========================
+Picas izmers:
+=========================
+Picas izmers:
+30cm - 2.00 Euro
+Picas piedevas:
+skinkis - 2.00 Euro
+Picas merce:
+---------------------
+=========================
+Picas izmers:
+50cm -  3.50 Euro
+Picas piedevas:
+skinkis - 2.00 Euro
+Picas merce:
+---------------------
+=========================
+Picas izmers:
+50cm -  3.50 Euro
+Picas piedevas:
+skinkis - 2.00 Euro
+Picas merce:
+---------------------
+=========================
+Picas izmers:
+30cm - 2.00 Euro
+Picas piedevas:
+skinkis - 2.00 Euro
+desa - 2.00 Euro
+Picas merce:
+---------------------
+=========================
+Picas izmers:
+30cm - 2.00 Euro
+Picas piedevas:
+desa - 2.00 Euro
+skinkis - 2.00 Euro
+Picas merce:
+---------------------
