@@ -1,8 +1,9 @@
-import java.io.FileReader;
+import java.awt.Component;
 import java.io.FileWriter;
 import java.io.PrintWriter;
-import java.lang.reflect.Array;
 import java.util.Scanner;
+
+import javax.swing.JOptionPane;
 
 
 public class Pica {
@@ -11,31 +12,30 @@ public class Pica {
 //===========================================================================	
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		String izvele;
+	String[] options = {"Ievadīt klienta datus", "Veikt Picu pastūtījumu", "Atcelt"};
+ int izvele = JOptionPane.showOptionDialog(null, "Returns the position of your choice on the array","Click a button",JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
 		
 		do{
-			System.out.println("1 - Ievadīt klienta datus|2 - Veikt Picu pastūtījumu| Atcelt");;
-			izvele = scan.next();		
-			izvele = izvele.toLowerCase();
+			
 	
 				switch(izvele){
-				case"1":
+				case 0:
 					KLDA();
 				break;
 				//==================	
-				case"2":
+				case 1:
 					PCDA();
 				break;
 				//==================		
-				case"atcelt":
+				case 2:
 					System.out.println("Programma aptureta!");
 				break;
 				//==================	
 				default:
-					System.out.println("Darbiba nepastav!");
+					JOptionPane.showMessageDialog(null,"Darbiba nepastav!","Kluda",JOptionPane.ERROR_MESSAGE);	
 				}
 			
-	}while(!izvele.equals("atcelt"));
+	}while(izvele==3);
 		}
 //===========================================================================	
 	public static void ierakstit(String v){
@@ -73,13 +73,12 @@ public class Pica {
 			String izvele;
 			double cena=0;
 			try {
+				
 			
-				System.out.println("=========================");
-				System.out.println("Picas izmērs");
+				
 				ierakstit("\n=========================");
 				ierakstit("\nPicas izmers:");
-				System.out.println("1 - 30cm|2 - 50cm");;
-				izvele = scan.next();		
+				izvele = JOptionPane.showInputDialog("  Picas izmērs\n 1 - 30cm|2 - 50cm ");			
 				izvele = izvele.toLowerCase();
 		
 					switch(izvele){
@@ -98,19 +97,14 @@ public class Pica {
 			}catch(Exception e){
 	}
 
-			try {
-				
+			try {			
 				boolean SE = false,KE = false,DE = false,EE = false;
-				System.out.println("Picas piedevas");
-				
 				ierakstit("\nPicas piedevas:");
-				System.out.println("1 - siers|2 - šķinķis|3 - desa|4 - sēnes|5 - Turpinat");
-				
-				     
+   
 				do {
-				izvele = scan.next();		
+				izvele = JOptionPane.showInputDialog("  Picas piedevas\n 1 - siers|2 - šķinķis|3 - desa|4 - sēnes|5 - Turpinat");		
 				izvele = izvele.toLowerCase();
-					
+				
 					switch(izvele){
 					case"1":
 						if(!SE) {
@@ -119,7 +113,7 @@ public class Pica {
 						
 						SE = true;
 					}else {
-						System.out.println("Siers jau ir pielikts!");
+						JOptionPane.showMessageDialog(null,"Siers jau ir pielikts!","Kluda",JOptionPane.ERROR_MESSAGE);	
 					}
 					break;
 					//==================
@@ -132,7 +126,7 @@ public class Pica {
 							KE = true;	
 							
 					}else {
-						System.out.println("skinkis jau ir pielikts!");
+						JOptionPane.showMessageDialog(null,"skinkis jau ir pielikts!","Kluda",JOptionPane.ERROR_MESSAGE);	
 					}
 					break;
 					//==================		
@@ -143,7 +137,7 @@ public class Pica {
 					
 						DE = true;
 					}else {
-						System.out.println("desa jau ir pielikts!");
+						JOptionPane.showMessageDialog(null,"desa jau ir pielikts!","Kluda",JOptionPane.ERROR_MESSAGE);	
 					}
 					break;
 					//==================	
@@ -154,7 +148,7 @@ public class Pica {
 						
 						EE = true;
 					}else {
-						System.out.println("senes jau ir pielikts!");
+						JOptionPane.showMessageDialog(null,"senes jau ir pielikts!","Kluda",JOptionPane.ERROR_MESSAGE);	
 					}
 					break;
 					//==================	
@@ -165,12 +159,15 @@ public class Pica {
 					break;
 					//==================	
 						
-					default:System.out.println("");}
+					default:
+						JOptionPane.showMessageDialog(null,"nekas","Kluda",JOptionPane.ERROR_MESSAGE);	
+					}
+				
 				
 				}while(!izvele.equals("5"));
 				
-				
 		}catch(Exception e){
+			JOptionPane.showMessageDialog(null,"nekas","Kluda",JOptionPane.ERROR_MESSAGE);	
 		}
 			try {
 				
@@ -178,9 +175,10 @@ public class Pica {
 				System.out.println("Picas mērce");
 		
 				ierakstit("\nPicas merce:");
-				System.out.println("1 - kečups|2 - majonēze|3 - gruķu mērce|4 - Turpinat");
+					
+			
 				do {
-				izvele = scan.next();		
+				izvele = JOptionPane.showInputDialog("1 - kečups|2 - majonēze|3 - gruķu mērce|4 - Turpinat");	
 				izvele = izvele.toLowerCase();
 					switch(izvele){
 					case"1":
@@ -190,7 +188,8 @@ public class Pica {
 						
 						SE = true;
 					}else {
-						System.out.println("šī mērce jau ir pielikts!");
+						JOptionPane.showMessageDialog(null,"šī mērce jau ir pielikts!","Kluda",JOptionPane.ERROR_MESSAGE);	
+						
 					}
 					break;
 					//==================	
@@ -201,7 +200,7 @@ public class Pica {
 						
 							KE = true;	
 					}else {
-						System.out.println("šī mērce jau ir pielikts!");
+						JOptionPane.showMessageDialog(null,"šī mērce jau ir pielikts!","Kluda",JOptionPane.ERROR_MESSAGE);	
 					}
 					break;
 					//==================		
@@ -212,12 +211,12 @@ public class Pica {
 						
 						DE = true;
 					}else {
-						System.out.println("šī mērce jau ir pielikts!");
+						JOptionPane.showMessageDialog(null,"šī mērce jau ir pielikts!","Kluda",JOptionPane.ERROR_MESSAGE);	
 					}
 					break;
 					//==================	
 					case"4":
-						PicIzm(cena);
+						
 					break;
 					//==================	
 						
@@ -233,8 +232,7 @@ public class Pica {
 				System.out.println("Uzvietas/Piegāde");
 				
 				ierakstit("\nUzvietas/Līdzi:");
-				System.out.println("1 - Piegade|2 - Uzvietas");;
-				izvele = scan.next();		
+				izvele = JOptionPane.showInputDialog("Uzvietas/Līdzi:\n 1 - Piegade|2 - Uzvietas");	
 				izvele = izvele.toLowerCase();
 		
 					switch(izvele){
@@ -250,15 +248,13 @@ public class Pica {
 					//==================		
 					default:System.out.println("Darbiba nepastav!");}	
 					ierakstit("\n---------------------");
+					PicIzm(cena);
 			}catch(Exception e){
 	}
 
 		
 }	
 //===========================================================================	
-		
-			
-		
 
 		public static void KLDA() {
 			Scanner scan = new Scanner(System.in);
@@ -266,25 +262,22 @@ public class Pica {
 			int t=0,count = 0;
 			char n=0;
 			
-			
-			System.out.println("Adrese(Ielas nosaukums un numurs): ");
-			a = scan.nextLine();
+			a = JOptionPane.showInputDialog("Adrese(Ielas nosaukums un numurs): ");	
 			for(int i=0;i<a.length();i++) {
 				if(Character.isDigit(a.charAt(i))) {
 				n=a.charAt(i);	
 			ierakstit("\n---------------------");
 			ierakstit("\nAdrese: "+a);
 				
-			System.out.println("vārds: ");
-			v = scan.next();
+			v = JOptionPane.showInputDialog("vārds: ");	
 			ierakstit("\nVards uzvards: "+v);
-			System.out.println("Uzvārds: ");
-			u = scan.next();
+			
+			u = JOptionPane.showInputDialog("Uzvārds: ");	
 			ierakstit(" "+u);
+			
 			do {
 				count=0;
-			System.out.println("Telefons: ");
-			t = scan.nextInt();
+				t = Integer.parseInt((JOptionPane.showInputDialog("Telefons: ")));
 			i=t;
 			while (i != 0) {  
 			      i /= 10;
@@ -293,6 +286,7 @@ public class Pica {
 			 String t1=String.format("%d",t);  
 		      ierakstit("\nTelefons: "+t1);
 			}while(8!=count);
+			JOptionPane.showMessageDialog(null, "Ierakstits faila","Info",JOptionPane.INFORMATION_MESSAGE);
 			System.out.println("\nIerakstits faila");
 			break;
 }
