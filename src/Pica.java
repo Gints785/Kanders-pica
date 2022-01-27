@@ -1,3 +1,6 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.Scanner;
@@ -7,18 +10,21 @@ import javax.swing.JOptionPane;
 
 public class Pica {
 	
-	static double a,b,c,skaitlis;
+	
 //===========================================================================	
 	public static void main(String[] args) {
-		izvele();
-		
+		boolean SE=false;
+		if(!SE) {
+			izvele();
+			SE = true;
+		}	
 	}
 	public static void izvele() {
 try{
 		Scanner scan = new Scanner(System.in);
 		int izvele;
-
-		String[] options = {"Ievadīt klienta datus", "Veikt Picu pastūtījumu", "Atcelt"};
+		
+		String[] options = {"Ievadīt klienta datus", "Veikt Picu pastūtījumu", "dzest datus(Dati.txt)","Atcelt"};
 	izvele = JOptionPane.showOptionDialog(null, "Veikt pasūtījumu","",JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
 		
 		do{
@@ -32,10 +38,11 @@ try{
 				break;
 				//==================		
 				case 2:
+				lasit1();
 				break;
 				//==================	
 				default:
-					JOptionPane.showMessageDialog(null,"Darbiba nepastav!","Kluda",JOptionPane.ERROR_MESSAGE);	
+					
 				}
 			
 	}while(izvele==3);
@@ -45,7 +52,7 @@ try{
 //===========================================================================	
 	public static void ierakstit(String v){
 		try{	
-			FileWriter fw = new FileWriter("Fails.txt", true);
+			FileWriter fw = new FileWriter("Dati.txt", true);
 			PrintWriter raksta = new PrintWriter(fw);
 			raksta.print(v);
 			raksta.close();
@@ -71,16 +78,38 @@ try{
 }
 }
 //===========================================================================	
-	//public static void lasit(){
+	public static void lasit(){
 		
-		//try{	
-			//FileWriter fw = new FileWriter("Apreikini.txt", true);
-		//	PrintWriter raksta = new PrintWriter(fw);
-			//raksta.print(" "+atbilde+" Eur");
-			//raksta.close();
-//}catch(Exception e){
-//}
-//}
+		try{	
+	 File file = new File("Apreikini.txt");
+	 BufferedReader br= new BufferedReader(new FileReader(file));
+	 String st;
+	       
+	 while ((st = br.readLine()) != null)
+		
+		 JOptionPane.showMessageDialog(null,"Izmaksās"+st);
+	 
+	 PrintWriter raksta = new PrintWriter("Apreikini.txt");
+	 raksta.close();
+	 
+	 izvele();
+}catch(Exception e){
+}
+}
+//===========================================================================
+public static void lasit1(){
+		
+		try{	
+	 
+	 PrintWriter fw = new PrintWriter("Dati.txt");
+	 fw.close();
+	 
+	 
+	
+}catch(Exception e){
+}
+}
+
 //===========================================================================
 
 
@@ -91,9 +120,10 @@ try{
 			try {
 				ierakstit("\n=========================");
 				ierakstit("\nPicas izmers:");
+			
 				izvele = JOptionPane.showInputDialog("  Picas izmērs\n 1 - 30cm|2 - 50cm ");			
 				izvele = izvele.toLowerCase();
-		
+				 
 					switch(izvele){
 					case"1":ierakstit("\n30cm - 2.00 Euro");
 					cena=cena+2.00;
@@ -102,16 +132,15 @@ try{
 					//==================	
 					case"2":ierakstit("\n50cm -  3.50 Euro");
 					cena=cena+3.50;
-					
 					break;
 					//==================		
-					default:System.out.println("Darbiba nepastav!");}	
-					
-			}catch(Exception e){
-	}
+					default:	
+					}	
+			
+	
 
-			try {			
-				boolean SE = false,KE = false,DE = false,EE = false;
+					
+				boolean SE = false,KE = false,DE = false,EE = false,KR = false,PR = false,SC = false;
 				ierakstit("\nPicas piedevas:");
    
 				do {
@@ -170,16 +199,11 @@ try{
 					//==================	
 						
 					default:
-						JOptionPane.showMessageDialog(null,"nekas","Kluda",JOptionPane.ERROR_MESSAGE);	
+						
 					}
 				}while(!izvele.equals("5"));
+
 				
-		}catch(Exception e){
-			JOptionPane.showMessageDialog(null,"nekas","Kluda",JOptionPane.ERROR_MESSAGE);	
-		}
-			
-			try {	
-				boolean SE = false,KE = false,DE = false;
 				System.out.println("Picas mērce");
 		
 				ierakstit("\nPicas merce:");
@@ -189,11 +213,11 @@ try{
 				izvele = izvele.toLowerCase();
 					switch(izvele){
 					case"1":
-						if(!SE) {
+						if(!KR) {
 						ierakstit("\nkecups - 1.00 Euro");
 						cena=cena+1.00;
 						
-						SE = true;
+						KR = true;
 					}else {
 						JOptionPane.showMessageDialog(null,"šī mērce jau ir pielikts!","Kluda",JOptionPane.ERROR_MESSAGE);	
 						
@@ -201,22 +225,22 @@ try{
 					break;
 					//==================	
 					case"2":
-						if(!KE) {
+						if(!PR) {
 							ierakstit("\nmajoneze - 1.00 Euro");
 							cena=cena+1.00;
 						
-							KE = true;	
+							PR = true;	
 					}else {
 						JOptionPane.showMessageDialog(null,"šī mērce jau ir pielikts!","Kluda",JOptionPane.ERROR_MESSAGE);	
 					}
 					break;
 					//==================		
 					case"3":
-						if(!DE) {
+						if(!SC) {
 						ierakstit("\ngruku merce - 1.20 Euro");
 						cena=cena+1.20;
 						
-						DE = true;
+						SC = true;
 					}else {
 						JOptionPane.showMessageDialog(null,"šī mērce jau ir pielikts!","Kluda",JOptionPane.ERROR_MESSAGE);	
 					}
@@ -230,9 +254,8 @@ try{
 					default:System.out.println("");}
 				}while(!izvele.equals("4"));
 				ierakstit("\n---------------------");
-		}catch(Exception e){
-		}
-			try {	
+		
+			
 				ierakstit("\nUzvietas/Lidzi:");
 				izvele = JOptionPane.showInputDialog("Uzvietas/Līdzi:\n 1 - Piegade|2 - Uzvietas");	
 				izvele = izvele.toLowerCase();
@@ -248,12 +271,18 @@ try{
 					
 					break;
 					//==================		
-					default:System.out.println("Darbiba nepastav!");}	
+					default:
+						JOptionPane.showMessageDialog(null,"Darbiba nepastav!","Kluda",JOptionPane.ERROR_MESSAGE);	
+						}	
 					ierakstit("\n---------------------");
 					PicIzm(cena);
+					lasit();
 			}catch(Exception e){
 	}
-izvele();
+			
+
+
+
 }	
 //===========================================================================	
 		public static void KLDA() {
