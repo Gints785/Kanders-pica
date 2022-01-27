@@ -84,8 +84,9 @@ try{
 	 File file = new File("Apreikini.txt");
 	 BufferedReader br= new BufferedReader(new FileReader(file));
 	 String st;
-	       
+	  
 	 while ((st = br.readLine()) != null)
+	 
 		
 		 JOptionPane.showMessageDialog(null,"Izmaksās"+st);
 	 
@@ -115,36 +116,41 @@ public static void lasit1(){
 
 		public static void PCDA() {
 			Scanner scan = new Scanner(System.in);
-			String izvele;
+			String izvele,IZM1="",IZM2="",PIE1="",PIE2="",PIE3="",PIE4="",MER1="",MER2="",MER3="";
 			double cena=0;
 			try {
 				ierakstit("\n=========================");
 				ierakstit("\nPicas izmers:");
-			
+			do{
 				izvele = JOptionPane.showInputDialog("  Picas izmērs\n 1 - 30cm|2 - 50cm ");			
 				izvele = izvele.toLowerCase();
-				 
 					switch(izvele){
-					case"1":ierakstit("\n30cm - 2.00 Euro");
+					case"1":
+					
+					ierakstit("\n30cm - 2.00 Euro");
 					cena=cena+2.00;
+					IZM1="30 cm pica";
 					
 					break;
 					//==================	
-					case"2":ierakstit("\n50cm -  3.50 Euro");
+					case"2":
+					
+					ierakstit("\n50cm -  3.50 Euro");
 					cena=cena+3.50;
+					IZM1="50 cm pica";
 					break;
 					//==================		
 					default:	
 					}	
-			
+			}while(!izvele.equals("1")&&!izvele.equals("2"));
 	
 
 					
 				boolean SE = false,KE = false,DE = false,EE = false,KR = false,PR = false,SC = false;
 				ierakstit("\nPicas piedevas:");
-   
+				
 				do {
-				izvele = JOptionPane.showInputDialog("  Picas piedevas\n 1 - siers|2 - šķinķis|3 - desa|4 - sēnes|5 - Turpinat");		
+				izvele = JOptionPane.showInputDialog(IZM1+IZM2+"\n=============\n"+PIE1+"\n"+PIE2+"\n"+PIE3+"\n"+PIE4+"\n\n"+"  Picas piedevas\n 1 - siers|2 - šķinķis|3 - desa|4 - sēnes|5 - Turpinat");		
 				izvele = izvele.toLowerCase();
 				
 					switch(izvele){
@@ -152,7 +158,7 @@ public static void lasit1(){
 						if(!SE) {
 						ierakstit("\nsiers - 1.50 Euro");
 						cena=cena+1.50;
-						
+						PIE1="Siers";
 						SE = true;
 					}else {
 						JOptionPane.showMessageDialog(null,"Siers jau ir pielikts!","Kluda",JOptionPane.ERROR_MESSAGE);	
@@ -164,7 +170,7 @@ public static void lasit1(){
 						if(!KE) {
 							ierakstit("\nskinkis - 2.00 Euro");
 							cena=cena+2.00;
-							
+							PIE2="Šķiņķis";
 							KE = true;	
 							
 					}else {
@@ -176,7 +182,7 @@ public static void lasit1(){
 						if(!DE) {
 						ierakstit("\ndesa - 2.00 Euro");
 						cena=cena+2.00;
-					
+						PIE3="Desa";
 						DE = true;
 					}else {
 						JOptionPane.showMessageDialog(null,"desa jau ir pielikts!","Kluda",JOptionPane.ERROR_MESSAGE);	
@@ -187,7 +193,7 @@ public static void lasit1(){
 						if(!EE) {
 						ierakstit("\nsenes - 1.00 Euro");
 						cena=cena+1.00;
-						
+						PIE4="Sēnes";
 						EE = true;
 					}else {
 						JOptionPane.showMessageDialog(null,"senes jau ir pielikts!","Kluda",JOptionPane.ERROR_MESSAGE);	
@@ -204,19 +210,19 @@ public static void lasit1(){
 				}while(!izvele.equals("5"));
 
 				
-				System.out.println("Picas mērce");
+				
 		
 				ierakstit("\nPicas merce:");
 
 				do {
-				izvele = JOptionPane.showInputDialog("1 - kečups|2 - majonēze|3 - gruķu mērce|4 - Turpinat");	
+				izvele = JOptionPane.showInputDialog(IZM1+IZM2+"\n=============\n"+PIE1+"\n"+PIE2+"\n"+PIE3+"\n"+PIE4+"\n=============\n"+MER1+"\n"+MER2+"\n"+MER3+"\n\n"+"1 - kečups|2 - majonēze|3 - gruķu mērce|4 - Turpinat");	
 				izvele = izvele.toLowerCase();
 					switch(izvele){
 					case"1":
 						if(!KR) {
 						ierakstit("\nkecups - 1.00 Euro");
 						cena=cena+1.00;
-						
+						MER1="Kečups";
 						KR = true;
 					}else {
 						JOptionPane.showMessageDialog(null,"šī mērce jau ir pielikts!","Kluda",JOptionPane.ERROR_MESSAGE);	
@@ -228,7 +234,7 @@ public static void lasit1(){
 						if(!PR) {
 							ierakstit("\nmajoneze - 1.00 Euro");
 							cena=cena+1.00;
-						
+							MER2="Majonēze";
 							PR = true;	
 					}else {
 						JOptionPane.showMessageDialog(null,"šī mērce jau ir pielikts!","Kluda",JOptionPane.ERROR_MESSAGE);	
@@ -239,7 +245,7 @@ public static void lasit1(){
 						if(!SC) {
 						ierakstit("\ngruku merce - 1.20 Euro");
 						cena=cena+1.20;
-						
+						MER3="Gurķu mērce";
 						SC = true;
 					}else {
 						JOptionPane.showMessageDialog(null,"šī mērce jau ir pielikts!","Kluda",JOptionPane.ERROR_MESSAGE);	
@@ -257,7 +263,7 @@ public static void lasit1(){
 		
 			
 				ierakstit("\nUzvietas/Lidzi:");
-				izvele = JOptionPane.showInputDialog("Uzvietas/Līdzi:\n 1 - Piegade|2 - Uzvietas");	
+				izvele = JOptionPane.showInputDialog(IZM1+IZM2+"\n=============\n"+PIE1+"\n"+PIE2+"\n"+PIE3+"\n"+PIE4+"\n=============\n"+MER1+"\n"+MER2+"\n"+MER3+"\n\n"+"Uzvietas/Līdzi:\n 1 - Piegade|2 - Uzvietas");	
 				izvele = izvele.toLowerCase();
 		
 					switch(izvele){
