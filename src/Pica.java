@@ -1,16 +1,20 @@
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.lang.reflect.Array;
 import java.util.Scanner;
 
+
 public class Pica {
+	
+	static double a,b,c,skaitlis;
 //===========================================================================	
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		String izvele;
-		lasit();
+		
 		do{
-			System.out.println("1 - Ievadīt klienta datus|2 - Izvēleties Picu| Atcelt");;
+			System.out.println("1 - Ievadīt klienta datus|2 - Veikt Picu pastūtījumu| Atcelt");;
 			izvele = scan.next();		
 			izvele = izvele.toLowerCase();
 	
@@ -43,180 +47,50 @@ public class Pica {
 }catch(Exception e){
 }
 }
-//===========================================================================	
-	public static void apreikinat(double a){
+	
+	
+//===========================================================================
+	public static double PicIzm(double cena){
 		
+		double atbilde = cena;
+		apreikinat(atbilde);
+		return cena;	
+	}
+//===========================================================================
+	public static void apreikinat(double atbilde){
 		
 		try{	
 			FileWriter fw = new FileWriter("Apreikini.txt", true);
 			PrintWriter raksta = new PrintWriter(fw);
-			raksta.print(" "+a);
+			raksta.print(" "+atbilde+" Eur");
 			raksta.close();
 }catch(Exception e){
 }
 }
-
 	//===========================================================================	
-		public static void lasit(){
+		//public static void lasit(){			
 			
-			
-			try{	
-				
-				
-				 FileReader fr = new FileReader(
-				            "Apreikini.txt");
-				        double i;
+		//	try{	
+	
+			//	 FileReader fr = new FileReader(
+			//	            "Apreikini.txt");
+			//	        double i;
 				      
-				        while ((i = fr.read()) != -1)
-				        	System.out.print((char)i);
-				        	 
-				        
-				           
-				         
-				    
-				
-	}catch(Exception e){
-	}
-	}
+			//	        while ((i = fr.read()) != -1)
+			//	        	System.out.print((char)i);
+			
+//	}catch(Exception e){
+//	}
+//	}
 
 	//===========================================================================	
-	public static void PCDA3() {
-		Scanner scan = new Scanner(System.in);
-		String izvele;
-try {
-			
-			boolean SE = false,KE = false,DE = false,EE = false;
-			System.out.println("Picas mērce");
-	
-			ierakstit("\nPicas merce:");
-			System.out.println("1 - kečups|2 - majonēze|3 - gruķu mērce|4 - Turpinat");
-			do {
-			izvele = scan.next();		
-			izvele = izvele.toLowerCase();
-				switch(izvele){
-				case"1":
-					if(!SE) {
-					ierakstit("\nkecups - 1.00 Euro");
-					SE = true;
-				}else {
-					System.out.println("šī mērce jau ir pielikts!");
-				}
-				break;
-				//==================	
-				case"2":
-					if(!KE) {
-						ierakstit("\nmajoneze - 1.00 Euro");
-						KE = true;	
-				}else {
-					System.out.println("šī mērce jau ir pielikts!");
-				}
-				break;
-				//==================		
-				case"3":
-					if(!DE) {
-					ierakstit("\ngruku merce - 1.20 Euro");
-					DE = true;
-				}else {
-					System.out.println("šī mērce jau ir pielikts!");
-				}
-				break;
-				//==================	
-				case"4":
-				
-				break;
-				//==================	
-					
-				default:System.out.println("");}
-			
-			}while(!izvele.equals("4"));
-			ierakstit("\n---------------------");
-	}catch(Exception e){
-	}
-				
-					
 
-}	
-	
 //===========================================================================	
-	public static void PCDA2(){
-		Scanner scan = new Scanner(System.in);
-		String izvele;
-		double a=0,b=0;
-		try {
-			
-			boolean SE = false,KE = false,DE = false,EE = false;
-			System.out.println("Picas piedevas");
-			
-			ierakstit("\nPicas piedevas:");
-			System.out.println("1 - siers|2 - šķinķis|3 - desa|4 - sēnes|5 - Turpinat");
-			
-			     
-			do {
-			izvele = scan.next();		
-			izvele = izvele.toLowerCase();
-				switch(izvele){
-				case"1":
-					if(!SE) {
-					ierakstit("\nsiers - 1.50 Euro");
-					a=a+1.50;
-					SE = true;
-				}else {
-					System.out.println("Siers jau ir pielikts!");
-				}
-				break;
-				//==================
-				
-				case"2":
-					if(!KE) {
-						ierakstit("\nskinkis - 2.00 Euro");
-						a=a+2.00;
-						KE = true;	
-						
-				}else {
-					System.out.println("desa jau ir pielikts!");
-				}
-				break;
-				//==================		
-				case"3":
-					if(!DE) {
-					ierakstit("\ndesa - 2.00 Euro");
-					a=a+2.00;
-					DE = true;
-				}else {
-					System.out.println("desa jau ir pielikts!");
-				}
-				break;
-				//==================	
-				case"4":
-					if(!EE) {
-					ierakstit("\nsenes - 1.00 Euro");
-					a=a+1.00;
-					EE = true;
-				}else {
-					System.out.println("senes jau ir pielikts!");
-				}
-				break;
-				//==================	
-				case"5":
-		
-					apreikinat(a);
-				break;
-				//==================	
-					
-				default:System.out.println("");}
-			
-			}while(!izvele.equals("5"));
-			
-			PCDA3();
-	}catch(Exception e){
-	}
-}
-		
-//===========================================================================	
+
 		public static void PCDA() {
 			Scanner scan = new Scanner(System.in);
 			String izvele;
-			double a=0;
+			double cena=0;
 			try {
 			
 				System.out.println("=========================");
@@ -229,18 +103,153 @@ try {
 		
 					switch(izvele){
 					case"1":ierakstit("\n30cm - 2.00 Euro");
-					a=a+2.00;
+					cena=cena+2.00;
+					
 					break;
 					//==================	
 					case"2":ierakstit("\n50cm -  3.50 Euro");
-					a=a+3.50;
+					cena=cena+3.50;
+					
 					break;
 					//==================		
 					default:System.out.println("Darbiba nepastav!");}	
+					
 			}catch(Exception e){
 	}
-			apreikinat(a);
-			PCDA2();
+
+			try {
+				
+				boolean SE = false,KE = false,DE = false,EE = false;
+				System.out.println("Picas piedevas");
+				
+				ierakstit("\nPicas piedevas:");
+				System.out.println("1 - siers|2 - šķinķis|3 - desa|4 - sēnes|5 - Turpinat");
+				
+				     
+				do {
+				izvele = scan.next();		
+				izvele = izvele.toLowerCase();
+					
+					switch(izvele){
+					case"1":
+						if(!SE) {
+						ierakstit("\nsiers - 1.50 Euro");
+						cena=cena+1.50;
+						
+						SE = true;
+					}else {
+						System.out.println("Siers jau ir pielikts!");
+					}
+					break;
+					//==================
+					
+					case"2":
+						if(!KE) {
+							ierakstit("\nskinkis - 2.00 Euro");
+							cena=cena+2.00;
+							
+							KE = true;	
+							
+					}else {
+						System.out.println("skinkis jau ir pielikts!");
+					}
+					break;
+					//==================		
+					case"3":
+						if(!DE) {
+						ierakstit("\ndesa - 2.00 Euro");
+						cena=cena+2.00;
+					
+						DE = true;
+					}else {
+						System.out.println("desa jau ir pielikts!");
+					}
+					break;
+					//==================	
+					case"4":
+						if(!EE) {
+						ierakstit("\nsenes - 1.00 Euro");
+						cena=cena+1.00;
+						
+						EE = true;
+					}else {
+						System.out.println("senes jau ir pielikts!");
+					}
+					break;
+					//==================	
+					case"5":
+						
+						
+						
+					break;
+					//==================	
+						
+					default:System.out.println("");}
+				
+				}while(!izvele.equals("5"));
+				
+				
+		}catch(Exception e){
+		}
+			try {
+				
+				boolean SE = false,KE = false,DE = false,EE = false;
+				System.out.println("Picas mērce");
+		
+				ierakstit("\nPicas merce:");
+				System.out.println("1 - kečups|2 - majonēze|3 - gruķu mērce|4 - Turpinat");
+				do {
+				izvele = scan.next();		
+				izvele = izvele.toLowerCase();
+					switch(izvele){
+					case"1":
+						if(!SE) {
+						ierakstit("\nkecups - 1.00 Euro");
+						cena=cena+1.00;
+						
+						SE = true;
+					}else {
+						System.out.println("šī mērce jau ir pielikts!");
+					}
+					break;
+					//==================	
+					case"2":
+						if(!KE) {
+							ierakstit("\nmajoneze - 1.00 Euro");
+							cena=cena+1.00;
+						
+							KE = true;	
+					}else {
+						System.out.println("šī mērce jau ir pielikts!");
+					}
+					break;
+					//==================		
+					case"3":
+						if(!DE) {
+						ierakstit("\ngruku merce - 1.20 Euro");
+						cena=cena+1.20;
+						
+						DE = true;
+					}else {
+						System.out.println("šī mērce jau ir pielikts!");
+					}
+					break;
+					//==================	
+					case"4":
+						PicIzm(cena);
+					break;
+					//==================	
+						
+					default:System.out.println("");}
+				
+				}while(!izvele.equals("4"));
+				ierakstit("\n---------------------");
+		}catch(Exception e){
+		}
+				
+			
+			
+			
 			
 }	
 //===========================================================================	
