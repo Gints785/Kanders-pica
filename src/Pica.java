@@ -46,9 +46,7 @@ public class Pica {
 			raksta.close();
 }catch(Exception e){
 }
-}
-	
-	
+}	
 //===========================================================================
 	public static double PicIzm(double cena){
 		
@@ -67,25 +65,8 @@ public class Pica {
 }catch(Exception e){
 }
 }
-	//===========================================================================	
-		//public static void lasit(){			
-			
-		//	try{	
-	
-			//	 FileReader fr = new FileReader(
-			//	            "Apreikini.txt");
-			//	        double i;
-				      
-			//	        while ((i = fr.read()) != -1)
-			//	        	System.out.print((char)i);
-			
-//	}catch(Exception e){
-//	}
-//	}
-
-	//===========================================================================	
-
 //===========================================================================	
+
 
 		public static void PCDA() {
 			Scanner scan = new Scanner(System.in);
@@ -193,7 +174,7 @@ public class Pica {
 		}
 			try {
 				
-				boolean SE = false,KE = false,DE = false,EE = false;
+				boolean SE = false,KE = false,DE = false;
 				System.out.println("Picas mērce");
 		
 				ierakstit("\nPicas merce:");
@@ -246,11 +227,33 @@ public class Pica {
 				ierakstit("\n---------------------");
 		}catch(Exception e){
 		}
+			try {
 				
-			
-			
-			
-			
+				
+				System.out.println("Uzvietas/Piegāde");
+				
+				ierakstit("\nUzvietas/Līdzi:");
+				System.out.println("1 - Piegade|2 - Uzvietas");;
+				izvele = scan.next();		
+				izvele = izvele.toLowerCase();
+		
+					switch(izvele){
+					case"1":ierakstit("\nPiegade - 2.00 Euro");
+					cena=cena+2.00;
+					
+					break;
+					//==================	
+					case"2":ierakstit("\nUzvietas - 0.00 Euro");
+					
+					
+					break;
+					//==================		
+					default:System.out.println("Darbiba nepastav!");}	
+					ierakstit("\n---------------------");
+			}catch(Exception e){
+	}
+
+		
 }	
 //===========================================================================	
 		
@@ -295,5 +298,5 @@ public class Pica {
 }
 }
 }
-//===========================================================================	
+
 	}
