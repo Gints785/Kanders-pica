@@ -1,4 +1,3 @@
-import java.awt.Component;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.Scanner;
@@ -11,14 +10,19 @@ public class Pica {
 	static double a,b,c,skaitlis;
 //===========================================================================	
 	public static void main(String[] args) {
+		izvele();
+		
+	}
+	public static void izvele() {
+try{
 		Scanner scan = new Scanner(System.in);
-	String[] options = {"Ievadīt klienta datus", "Veikt Picu pastūtījumu", "Atcelt"};
- int izvele = JOptionPane.showOptionDialog(null, "Returns the position of your choice on the array","Click a button",JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+		int izvele;
+
+		String[] options = {"Ievadīt klienta datus", "Veikt Picu pastūtījumu", "Atcelt"};
+	izvele = JOptionPane.showOptionDialog(null, "Veikt pasūtījumu","",JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
 		
 		do{
-			
-	
-				switch(izvele){
+			switch(izvele){
 				case 0:
 					KLDA();
 				break;
@@ -28,7 +32,6 @@ public class Pica {
 				break;
 				//==================		
 				case 2:
-					System.out.println("Programma aptureta!");
 				break;
 				//==================	
 				default:
@@ -36,7 +39,9 @@ public class Pica {
 				}
 			
 	}while(izvele==3);
+		}catch(Exception e){
 		}
+	}
 //===========================================================================	
 	public static void ierakstit(String v){
 		try{	
@@ -66,6 +71,17 @@ public class Pica {
 }
 }
 //===========================================================================	
+	//public static void lasit(){
+		
+		//try{	
+			//FileWriter fw = new FileWriter("Apreikini.txt", true);
+		//	PrintWriter raksta = new PrintWriter(fw);
+			//raksta.print(" "+atbilde+" Eur");
+			//raksta.close();
+//}catch(Exception e){
+//}
+//}
+//===========================================================================
 
 
 		public static void PCDA() {
@@ -73,9 +89,6 @@ public class Pica {
 			String izvele;
 			double cena=0;
 			try {
-				
-			
-				
 				ierakstit("\n=========================");
 				ierakstit("\nPicas izmers:");
 				izvele = JOptionPane.showInputDialog("  Picas izmērs\n 1 - 30cm|2 - 50cm ");			
@@ -153,30 +166,24 @@ public class Pica {
 					break;
 					//==================	
 					case"5":
-						
-						
-						
 					break;
 					//==================	
 						
 					default:
 						JOptionPane.showMessageDialog(null,"nekas","Kluda",JOptionPane.ERROR_MESSAGE);	
 					}
-				
-				
 				}while(!izvele.equals("5"));
 				
 		}catch(Exception e){
 			JOptionPane.showMessageDialog(null,"nekas","Kluda",JOptionPane.ERROR_MESSAGE);	
 		}
-			try {
-				
+			
+			try {	
 				boolean SE = false,KE = false,DE = false;
 				System.out.println("Picas mērce");
 		
 				ierakstit("\nPicas merce:");
-					
-			
+
 				do {
 				izvele = JOptionPane.showInputDialog("1 - kečups|2 - majonēze|3 - gruķu mērce|4 - Turpinat");	
 				izvele = izvele.toLowerCase();
@@ -221,17 +228,12 @@ public class Pica {
 					//==================	
 						
 					default:System.out.println("");}
-				
 				}while(!izvele.equals("4"));
 				ierakstit("\n---------------------");
 		}catch(Exception e){
 		}
-			try {
-				
-				
-				System.out.println("Uzvietas/Piegāde");
-				
-				ierakstit("\nUzvietas/Līdzi:");
+			try {	
+				ierakstit("\nUzvietas/Lidzi:");
 				izvele = JOptionPane.showInputDialog("Uzvietas/Līdzi:\n 1 - Piegade|2 - Uzvietas");	
 				izvele = izvele.toLowerCase();
 		
@@ -251,11 +253,9 @@ public class Pica {
 					PicIzm(cena);
 			}catch(Exception e){
 	}
-
-		
+izvele();
 }	
 //===========================================================================	
-
 		public static void KLDA() {
 			Scanner scan = new Scanner(System.in);
 			String v,u,a = null;
@@ -287,10 +287,9 @@ public class Pica {
 		      ierakstit("\nTelefons: "+t1);
 			}while(8!=count);
 			JOptionPane.showMessageDialog(null, "Ierakstits faila","Info",JOptionPane.INFORMATION_MESSAGE);
-			System.out.println("\nIerakstits faila");
+			izvele();
 			break;
 }
 }
+}	
 }
-
-	}
