@@ -260,8 +260,26 @@ public static void lasit1(){
 					default:System.out.println("");}
 				}while(!izvele.equals("4"));
 				ierakstit("\n---------------------");
+//===========================================================================	
+				ierakstit("\nmaksas veids:");
+				do {
+				izvele = JOptionPane.showInputDialog(IZM1+IZM2+"\n=============\n"+PIE1+"\n"+PIE2+"\n"+PIE3+"\n"+PIE4+"\n=============\n"+MER1+"\n"+MER2+"\n"+MER3+"\n\n"+"maksas veids:\n 1 - Skaidra|2 - ar karti");	
+				izvele = izvele.toLowerCase();
 		
-			
+					switch(izvele){
+	
+					
+					case"1":ierakstit("\nSkaidra");
+					
+					break;
+					//==================	
+					case"2":ierakstit("\nar karti");
+					break;
+				}
+				}while(!izvele.equals("1")&&!izvele.equals("2"));
+				
+				ierakstit("\n---------------------");
+//===========================================================================	
 				ierakstit("\nUzvietas/Lidzi:");
 				izvele = JOptionPane.showInputDialog(IZM1+IZM2+"\n=============\n"+PIE1+"\n"+PIE2+"\n"+PIE3+"\n"+PIE4+"\n=============\n"+MER1+"\n"+MER2+"\n"+MER3+"\n\n"+"Uzvietas/Līdzi:\n 1 - Piegade|2 - Uzvietas");	
 				izvele = izvele.toLowerCase();
